@@ -1,0 +1,25 @@
+CXXFLAGS = $(ZEBRA_COMPILE_OPT) -I. -I/home/liuqing/boost_1_52_0 -I/home/liuqing/liuqing/mysql-connector-c++-1.0.5/ -Wall -D_GNU_SOURCE -D_REENTRANT 
+CXXLFLAGS = $(ZEBRA_COMPILE_OPT) -Wall -lpthread -llog4cxx -L/home/liuqing/boost_1_52_0/stage/lib
+#-lgd
+
+OBJS = common.o x_logger.o x_service.o x_tcpserver.o x_netservice.o 
+LIB_ZEBRA = libseal.a
+SRCS = $(OBJS:%.o=%.cpp)
+DEPS = $(OBJS:%.o=.%.d)
+
+all: $(LIB_ZEBRA)
+
+include $(DEPS)
+$(DEPS): .%.d: %.cpp
+	@$(CXX) -M $(CXXFLAGS) $< > $@.$$$$; sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; rm -f $@.$$$$
+
+$(OBJS): %.o: %.cpp
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+$(LIB_ZEBRA): $(OBJS)
+	@rm -rf $(LIB_ZEBRA)
+	@ar cru $(LIB_ZEBRA) $(OBJS)
+	@ranlib $(LIB_ZEBRA)
+
+clean:
+	@rm -rf $(OBJS) $(LIB_ZEBRA) core *~

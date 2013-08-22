@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Config>
+	<Client>
+		<port>10001</port>
+		<server>127.0.0.1</server>
+		<username>loki</username>
+		<passwd>loki</passwd>
+	</Client>
+</Config>

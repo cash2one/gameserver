@@ -1,0 +1,225 @@
+#log4j.rootLogger=TRACE, stdout, logfile
+
+#TRACE, DEBUG, INFO, WARN, ERROR and FATAL 
+
+log4j.rootLogger= TRACE , logfile
+
+#log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+#log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+#log4j.appender.stdout.layout.ConversionPattern=%d [%t] %-5p %c - %m%n
+
+log4j.appender.logfile=org.apache.log4j.FileAppender
+log4j.appender.logfile.File=/home/loki/log/main.log
+log4j.appender.logfile.MaxFileSize=1000KB
+log4j.appender.logfile.MaxBackupIndex=10
+log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logfile.layout.ConversionPattern=%d [%t] %-5p %c - %m%n
+
+
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.SuperServer=TRACE, superserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.SuperServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.superserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.superserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.superserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.superserver.File=/home/loki/log/superserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.superserver.Append=true 
+log4j.appender.superserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.superserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+ 
+
+#对Appender listApp2进行设置 
+#log4j.appender.listApp2=org.apache.log4j.FileAppender 
+#log4j.appender.listApp2.ImmediateFlush=true 
+#log4j.appender.listApp2.File=listApp2.log 
+#log4j.appender.listApp2.Append=false 
+#log4j.appender.listApp2.layout=org.apache.log4j.PatternLayout 
+#log4j.appender.listApp2.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+
+########################################################################
+### RecordServer
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.RecordServer=TRACE, recordserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.RecordServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.recordserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.recordserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.recordserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.recordserver.File=/home/loki/log/recordserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.recordserver.Append=true 
+log4j.appender.recordserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.recordserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+
+
+########################################################################
+### BillServer
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.BillServer=TRACE, billserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.BillServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.billserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.billserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.billserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.billserver.File=/home/loki/log/billserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.billserver.Append=true 
+log4j.appender.billserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.billserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+
+
+########################################################################
+### SessionServer
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.SessionServer=TRACE, sessionserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.SessionServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.sessionserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.sessionserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.sessionserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.sessionserver.File=/home/loki/log/sessionserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.sessionserver.Append=true 
+log4j.appender.sessionserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.sessionserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+
+
+########################################################################
+### SceneServer
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.SceneServer= TRACE, sceneserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.SceneServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.sceneserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.sceneserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.sceneserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.sceneserver.File=/home/loki/log/sceneserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.sceneserver.Append=true 
+log4j.appender.sceneserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.sceneserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+
+########################################################################
+### GatewayServer
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.GatewayServer=TRACE, gatewayserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.GatewayServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.gatewayserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.gatewayserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.gatewayserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.gatewayserver.File=/home/loki/log/gatewayserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.gatewayserver.Append=true 
+log4j.appender.gatewayserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.gatewayserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+
+########################################################################
+### FLServer
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.FLServer=TRACE, flserver
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.FLServer=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.flserver=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.flserver.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.flserver.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.flserver.File=/home/loki/log/flserver.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.flserver.Append=true 
+log4j.appender.flserver.layout=org.apache.log4j.PatternLayout 
+log4j.appender.flserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n
+
+########################################################################
+### Client
+########################################################################
+# 设置.listApp logger,屏蔽logger-list的LEVEL继承 
+log4j.logger.Client=TRACE, client
+
+#屏蔽listApp的Appender继承 
+log4j.additivity.Client=false
+
+#对Appender listApp进行设置# 这是一个文件类型的Appender， 
+log4j.appender.client=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.client.datePattern = '.'yyyyMMdd-HH
+
+#立即写入日志文件 
+log4j.appender.client.ImmediateFlush=true
+
+# 其输出文件（File）为 second.log 
+log4j.appender.client.File=/home/loki/log/client.log
+
+# 输出方式（Append）为覆盖方式， 
+#log4j.appender.client.Append=true 
+log4j.appender.client.layout=org.apache.log4j.PatternLayout 
+log4j.appender.flserver.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %.16c - %m%n

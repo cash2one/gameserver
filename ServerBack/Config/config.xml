@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Config>
+	<global>
+		<ifname>lo</ifname>
+		<daemon>1</daemon>
+		<port>10000</port>
+		<server>192.168.123.186</server>
+		<threadsNum>4</threadsNum>
+	</global>
+
+	<SuperServer>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+		<flserver>127.0.0.1</flserver>
+		<flport>10002</flport>
+	</SuperServer>
+
+	<RecordServer>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+		<port>10000</port>
+		<server>127.0.0.1</server>
+	</RecordServer>
+
+	<BillServer>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+		<port>10000</port>
+		<server>127.0.0.1</server>
+	</BillServer>
+
+	<SessionServer>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+		<port>10000</port>
+		<server>127.0.0.1</server>
+	</SessionServer>
+
+	<SceneServer>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+		<port>10000</port>
+		<server>127.0.0.1</server>
+	</SceneServer>
+
+	<GatewayServer>
+		<daemon>1</daemon>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+		<port>10000</port>
+		<server>127.0.0.1</server>
+	</GatewayServer>
+
+	<FLServer>
+		<login_port>10001</login_port>
+		<inside_port>10002</inside_port>
+		<ping_port>10003</ping_port>
+		<daemon>1</daemon>
+		<url>tcp://127.0.0.1:3306</url>
+		<user>root</user>
+		<password>fuck@123</password>
+		<database>seal</database>
+		<threadPoolState>state_none</threadPoolState>
+		<threadPoolServer>256</threadPoolServer>
+	</FLServer>
+</Config>

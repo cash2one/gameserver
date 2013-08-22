@@ -1,0 +1,136 @@
+zNetService
+zSubService->superClient
+GatewayService
+
+
+zNoncopyable
+zThread  zProcessor
+zTCPClient
+zTCPBufferClient
+SuperClient	RecordClient SceneClient BillClient MiniClient SessionClient 
+
+zService
+zNetService +zTCPServer
+SuperService
+{
+	zTCPTaskPool
+}
+
+zTCPTaskPool
+{
+	zVerifyThread 4
+	zSyncThread 1
+	zOkayThread 连接数/512 +1
+	zRecycleThread 1
+}
+
+zTCPClientTaskPool
+{
+	zTCPClientTaskQueue
+		^
+		|
+	zCheckConnectThread
+	zCheckWaitThread
+	zTCPClientTaskThread
+}
+
+主线程只负责接受新连接
+TimeTick 负责主线程逻辑处理
+
+
+/////////////////////////////////////////////////////////////
+
+ Ubuntu下boost库编译安装
+ 分类： 可信网络连接 2011-12-02 23:29 221人阅读 评论(0) 收藏 举报
+ 从boost官网下载(这里)安装包，目前最新版本是1.48.
+
+ 解压后进入目录，简单安装：
+
+ ./bootstrap.sh
+
+ sudo ./b2 install
+
+ 即可。
+
+ 安装过程中提示： patchlevel.h：没有那个文件或目录
+
+ sudo apt-get install python-dev
+
+ bzlib.h：没有那个文件或目录
+
+ sudo apt-get install libbz2-dev
+
+
+ //////////////////////////////////////
+ The Boost C++ Libraries were successfully built!
+
+ The following directory should be added to compiler include paths:
+
+ /home/liuqing/boost_1_52_0
+
+ The following directory should be added to linker library paths:
+
+ /home/liuqing/boost_1_52_0/stage/lib
+
+
+ ///////////////////////////////
+
+sed closesocket close
+
+sed Zebra::logger Xlogger
+
+
+//install mysql
+sudo apt-get intall mysql-server
+sudo apt-get install libmysqlclient-dev
+
+
+#distcc
+# Non-members may check out a read-only working copy anonymously over HTTP.
+svn checkout http://distcc.googlecode.com/svn/trunk/ distcc-read-only
+
+
+我没发你的， 3584093826 我把他QQ发你， 你要去的话， 自己联系吧
+
+
+autogen tool
+
+
+//boost::async_read
+只有将缓冲全部填满 回调函数才会调用
+
+407145768
+
+
+编译安装lua
+lua, by foxbin.
+Lua 是一个小巧的脚本语言。是巴西里约热内卢天主教大学（Pontifical Catholic University of Rio de Janeiro）里的一个研究小组，由Roberto Ierusalimschy、Waldemar Celes 和 Luiz Henrique de Figueiredo所组成并于1993年开发。 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。Lua由标准C编写而成，几乎在所有操作系统和平台上都可以编译，运行。 Lua并没有提供强大的库，这是由它的定位决定的。所以Lua不适合作为开发独立应用程序的语言。Lua 有一个同时进行的JIT项目，提供在特定平台上的即时编译功能。
+
+官方下载地址:
+http://www.lua.org/ftp/
+
+下载后开始安装:
+
+tar-zxvf lua-5.2.0.tar.gz
+cd lua-5.2.0
+make linux
+make install
+完成安装.
+
+如果遇到
+
+lua.c:67:31: fatal error: readline/readline.h: No such file or directory
+说明缺少libreadline-dev依赖包
+
+centos: yum install readline-devel
+debian: apt-get install libreadline-dev.
+Back Top
+
+[paths]
+default = https://sarimoly@bitbucket.org/sarimoly/server-asio
+
+
+////
+init process
+SendGameVersion();
+stPasswdLogonUserCmd
