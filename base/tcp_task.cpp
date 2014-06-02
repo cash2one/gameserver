@@ -48,6 +48,9 @@ void tcp_task::start(){
 	set_state(state_verify_);
 	use = ptr.use_count() - 1;
 	Xlogger->debug("%s use count2 = %d", __PRETTY_FUNCTION__, use);
+
+	boost::asio::ip::tcp::no_delay option(true);
+	sock_.set_option(option);
 }
 
 void tcp_task::async_read(){
