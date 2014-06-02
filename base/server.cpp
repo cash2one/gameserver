@@ -1,8 +1,12 @@
 #include "server.h"
 #include <boost/bind.hpp>
 
-server::server(const std::string& address, const std::string& port, io_service_pool& pool, handle_new_task_t task_handle) 
-	:io_service_pool_(pool), acceptor_(io_service_pool_.get_io_service())
+server::server(const std::string& address, 
+		const std::string& port, 
+		io_service_pool& pool, 
+		handle_new_task_t task_handle) 
+	:io_service_pool_(pool), 
+	acceptor_(io_service_pool_.get_io_service())
 {
 	// Register to handle the signals that indicate when the server should exit.
 	// It is safe to register for the same signal multiple times in a program,
@@ -28,7 +32,8 @@ void server::run() {
 void server::start_accept() {
 	shared_ptr<tcp_task> new_task = new_tcp_task_(io_service_pool_.get_io_service());
 	if (new_task)
-		acceptor_.async_accept(new_task->get_socket(), boost::bind(&server::handle_accept,this, new_task, boost::asio::placeholders::error));
+		acceptor_.async_accept(new_task->get_socket(), 
+				boost::bind(&server::handle_accept,this, new_task, boost::asio::placeholders::error));
 }
 
 void server::handle_accept(shared_ptr<tcp_task> new_task, const boost::system::error_code& e) {
